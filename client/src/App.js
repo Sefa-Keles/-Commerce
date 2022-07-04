@@ -4,7 +4,8 @@ import {
   Route,
 } from "react-router-dom";
 
-import Navbar from "./components/Navbar/index.js";
+import Navbar from "./components/Navbar";
+import Products from './pages/Products';
 import Signin from './pages/auth/Signin';
 import Signup from './pages/auth/Signup';
 
@@ -14,17 +15,13 @@ function App() {
       <Navbar/>
       <div className="content">
         <Routes>
-            <Route path="/" element={<Home/>}/>
+            <Route path="/" element={<Products/>}/>
             <Route path="/signin" element={<Signin/>}/>
             <Route path="/signup" element={<Signup/>}/>
         </Routes>
       </div>
     </div>
   );
-}
-
-function Home() {
-  return <h2>This is a Home Component</h2>
 }
 
 export default App;

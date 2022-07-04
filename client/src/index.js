@@ -2,19 +2,35 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import './reset.css'
-import App from './App';
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
 import { ChakraProvider } from '@chakra-ui/react'
 import { BrowserRouter } from 'react-router-dom';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+const queryClient = new QueryClient({
+  //Preventing the refetch process when we switch to another screen or tab
+  defaultOptions: {
+    queries: {
+      refetchOnMount: false,
+      refetchOnWindowFocus: false
+    }
+  }
+})
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ChakraProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>  
-    </ChakraProvider>
+     <QueryClientProvider client={queryClient}>
+      <ChakraProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>  
+      </ChakraProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
+     </QueryClientProvider>
   </React.StrictMode>
 );
 

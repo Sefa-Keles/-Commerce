@@ -6,6 +6,7 @@ import { Button } from '@chakra-ui/react'
 const Navbar = () => {
   return (
     <nav className= {styles.nav}>
+      {/*Left of Navbar*/}
       <div className={styles.left}>
         <div className="logo">
           <Link to='/'>ECommerce</Link>
@@ -15,16 +16,17 @@ const Navbar = () => {
             <Link to='/products'>Products</Link>
           </li>
         </div>
-      </div>
+      </div> 
+      {/*Right of Navbar*/}
       <div className={styles.right}>
         <div className="login">
           <Link to='/signin'>
-            <Button colorScheme='green'>Login</Button>
+            <Button colorScheme='pink'>Login</Button>
           </Link>
         </div>
         <div className="register">
         <Link to='/signup'>
-          <Button colorScheme='green'>Register</Button>
+          <Button colorScheme='pink'>Register</Button>
         </Link>  
         </div>
       </div>
