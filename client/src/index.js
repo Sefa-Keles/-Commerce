@@ -4,6 +4,10 @@ import './index.css';
 import './reset.css'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
+
+//Contexts
+import {AuthProvider} from './context/AuthContext'
+
 import { ChakraProvider } from '@chakra-ui/react'
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
@@ -26,7 +30,9 @@ root.render(
      <QueryClientProvider client={queryClient}>
       <ChakraProvider>
         <BrowserRouter>
-          <App />
+          <AuthProvider>
+            <App />
+          </AuthProvider>
         </BrowserRouter>  
       </ChakraProvider>
       <ReactQueryDevtools initialIsOpen={false} />
