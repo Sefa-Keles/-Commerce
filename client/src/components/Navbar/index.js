@@ -8,12 +8,12 @@ const Navbar = () => {
     <nav className= {styles.nav}>
       {/*Left of Navbar*/}
       <div className={styles.left}>
-        <div className="logo">
-          <Link to='/'>ECommerce</Link>
+        <div className={styles.logo}>
+          <Link to='/'>Ǝ-Commerc-E</Link>
         </div>
         <div className={styles.menu}>
           <li>
-            <Link to='/products'>Products</Link>
+            <Link to='/'>Products</Link>
           </li>
         </div>
       </div> 
