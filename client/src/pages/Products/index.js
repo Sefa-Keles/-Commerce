@@ -13,7 +13,6 @@ const Products = () => {
         error,
         fetchNextPage,
         hasNextPage,
-        isFetching,
         isFetchingNextPage,
         status,
      } = useInfiniteQuery('products', fetchProductList,
@@ -25,14 +24,16 @@ const Products = () => {
                 if(!nextExistingProducts) {
                     return;
                 }
-
+                
                 return pages.length + 1;
             }
         } );
-    
+        
     if (status === "loading") return 'Loading...'
     
     if (status === 'error') return 'An error has occurred: ' + error.message;
+
+    console.log("data" , data)
 
     return (
         <div>
@@ -65,7 +66,7 @@ const Products = () => {
                     : 'Nothing more to load'}
                 </Button>
             </Flex>
-            <div>{isFetching && !isFetchingNextPage ? 'Fetching...' : null}</div>
+            {/* <div>{isFetching && !isFetchingNextPage ? 'Fetching...' : null}</div> */}
         </div>
   )
 }

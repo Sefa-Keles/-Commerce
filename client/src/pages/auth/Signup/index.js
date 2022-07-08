@@ -4,10 +4,10 @@ import { useFormik } from 'formik'
 import validationSchema from './validations'
 import { fetchRegister } from '../../../api'
 
-import { useAuth } from '../../../context/AuthContext'
+import { useAuthContext } from '../../../context/AuthContext'
 
 const Signup = () => {
-  const { login } = useAuth();
+  const { login } = useAuthContext();
   const formik = useFormik({
     initialValues: {
       email:'',
