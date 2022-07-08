@@ -1,9 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useAuthContext } from '../../context/AuthContext'
-import { Text } from '@chakra-ui/react'
+import { Text, Button } from '@chakra-ui/react'
 
-const Profile = () => {
-    const { user } = useAuthContext();
+function Profile() {
+    const { user, logout } = useAuthContext();
+    const navigate = useNavigate();
+    const handleLogout = async () => {
+        logout(() => {
+            navigate('/')
+        })
+    }
     return (
         <div>
             <Text fontSize='25'>PROFILE</Text>
@@ -12,6 +19,8 @@ const Profile = () => {
                     JSON.stringify(user)
                 }
             </code>
+            <br /><br />
+            <Button colorScheme='blue' variant='solid' onClick={handleLogout}>Logout</Button>
         </div>
   )
 }
