@@ -34,6 +34,11 @@ export const fetchRegister = async(inputsData) => {
     return data;
 }
 
+export const fetchLogin = async(inputsData) => {
+    const {data} = await axios.post(`${process.env.REACT_APP_BASE_ENDPOINT}/auth/login`, inputsData);
+    return data;
+}
+
 export const fetchMe = async() => {
     const {data} = await axios.get(`${process.env.REACT_APP_BASE_ENDPOINT}/auth/me`)
     return data;

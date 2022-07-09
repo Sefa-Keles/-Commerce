@@ -22,8 +22,8 @@ function App() {
             <Route path="/product/:product_id" element={<ProductDetail/>}/>
             <Route path="/signin" element={<Signin/>}/>
             <Route path="/signup" element={<Signup/>}/>
-            <Route path="/profile" element={<PrivateRoutes/>}>
-              <Route element={<Profile/>} path='/profile'/> {/*This is an <Outlet/>*/}
+            <Route element={<PrivateRoutes/>}>
+              <Route path='/profile' element={<Profile/>}/> {/*This is an <Outlet/>*/}
             </Route>
         </Routes>
       </div>

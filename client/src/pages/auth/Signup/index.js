@@ -5,9 +5,11 @@ import validationSchema from './validations'
 import { fetchRegister } from '../../../api'
 
 import { useAuthContext } from '../../../context/AuthContext'
+import { useNavigate } from 'react-router-dom'
 
 const Signup = () => {
   const { login } = useAuthContext();
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       email:'',
@@ -18,7 +20,8 @@ const Signup = () => {
     onSubmit: async (values, bag) => {
       try {
         const registeredData = await fetchRegister({ email: values.email, password: values.password});
-        login(registeredData)
+        login(registeredData);
+        navigate('/profile');
       } catch (error) {
         bag.setErrors({general: error.response.data.message})
       }

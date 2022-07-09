@@ -9,7 +9,7 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 import {AuthProvider} from './context/AuthContext'
 
 import { ChakraProvider } from '@chakra-ui/react'
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -29,11 +29,11 @@ root.render(
   <React.StrictMode>
      <QueryClientProvider client={queryClient}>
       <ChakraProvider>
-        <BrowserRouter>
+        <Router>
           <AuthProvider>
             <App />
           </AuthProvider>
-        </BrowserRouter>  
+        </Router>  
       </ChakraProvider>
       <ReactQueryDevtools initialIsOpen={false} />
      </QueryClientProvider>
