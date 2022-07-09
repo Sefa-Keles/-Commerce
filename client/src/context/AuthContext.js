@@ -4,6 +4,7 @@ import { fetchLogout, fetchMe } from '../api';
 
 const AuthContext = createContext();
 
+//This context holds user information, login information, and loading icon information.
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loggedIn, setLoggedIn] = useState(false);

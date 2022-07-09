@@ -4,9 +4,11 @@ import styles from './styles.module.css'
 import { Button } from '@chakra-ui/react'
 
 import { useAuthContext } from '../../context/AuthContext'
+import { useBasketContext } from '../../context/BasketContext';
 
 const Navbar = () => {
   const { loggedIn } = useAuthContext();
+  const {basketItems} = useBasketContext()
   return (
     <nav className= {styles.nav}>
       {/*Left of Navbar*/}
@@ -40,6 +42,15 @@ const Navbar = () => {
           {
             loggedIn && (
               <>
+                {
+                  basketItems.length > 0 && (
+                    <Link to='/basket'>
+                      <Button colorSchema='pink' variant='outline'>
+                        Basket ({basketItems.length})
+                      </Button>
+                    </Link>
+                  )
+                }
                 <Link to='/profile'>
                   <Button >Profile</Button>
                 </Link>
