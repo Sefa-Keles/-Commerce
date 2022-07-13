@@ -4,13 +4,13 @@ import { useQuery } from 'react-query'
 import { fetchOrders } from '../../../api'
 
 const Orders = () => {
-  const {isLoading, isError, data} = useQuery('admin:orders', fetchOrders);
+  const {isLoading, isError, data, error} = useQuery('admin:orders', fetchOrders);
   if(isLoading){
     return <div>Loading...</div>
   }
 
   if(isError){
-    return <div>Error: {isError.message}</div>
+    return <div>Error: {error.message}</div>
   }
 
   //console.log(data)

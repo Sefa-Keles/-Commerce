@@ -10,7 +10,7 @@ const Navbar = () => {
   const { loggedIn, user } = useAuthContext();
   const {basketItems} = useBasketContext()
   return (
-    <nav className= {styles.nav}>
+    <nav className={styles.nav}>
       {/*Left of Navbar*/}
       <div className={styles.left}>
         <div className={styles.logo}>
