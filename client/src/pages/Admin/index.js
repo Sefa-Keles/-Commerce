@@ -24,7 +24,7 @@ const Admin = () => {
         </nav>
         <Box mt='10'>
           <Routes>
-            <Route element={<AdminHome/>}/>
+            <Route path='' element={<AdminHome/>}/>
             <Route path={'orders'} element={<Orders/>}/>
             <Route path={'products'} element={<Products/>}/>
           </Routes>      
