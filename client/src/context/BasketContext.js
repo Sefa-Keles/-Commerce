@@ -8,6 +8,7 @@ const defaultBasket = JSON.parse(localStorage.getItem('basket')) || [];
 const BasketProvider = ({ children }) => {
     const [basketItems, setBasketItems] = useState(defaultBasket);
 
+    //After the selection is made, the products added to the cart are saved in the "localstorage". Thus, it remains constant even if the page is refreshed.
     useEffect(() => {
         localStorage.setItem('basket', JSON.stringify(basketItems))
     },[basketItems])
@@ -27,11 +28,14 @@ const BasketProvider = ({ children }) => {
         setBasketItems(filtered)
     }
 
+    const emptyBasket = () => setBasketItems([]);
+
     const values = {
         basketItems, 
         setBasketItems,
         addToBasket,
-        removeFromBasket
+        removeFromBasket,
+        emptyBasket
     }
 
     return (

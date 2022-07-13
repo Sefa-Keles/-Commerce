@@ -10,9 +10,11 @@ import ProductDetail from './pages/ProductDetail';
 import Signin from './pages/auth/Signin';
 import Signup from './pages/auth/Signup';
 import Profile from './pages/Profile';
+import Admin from './pages/Admin';
 import Basket from './pages/Basket';
 import PrivateRoutes from './pages/PrivateRoutes';
 import Error404 from './pages/Error404';
+import PrivateAdmin from './pages/PrivateAdmin';
 
 function App() {
   return (
@@ -27,7 +29,8 @@ function App() {
             <Route path="/basket" element={<Basket/>}/>
             <Route path='*' element={<Error404/>}/>
             <Route element={<PrivateRoutes/>}>
-              <Route path='/profile' element={<Profile/>}/> {/*This is an <Outlet/>*/}
+              <Route path='/profile' element={<Profile/>}/> 
+              <Route path='/admin/*' element={<PrivateAdmin><Admin admin={true}/></PrivateAdmin>}/>{/*I wrapped it with PrivateAdmin so that a user who is a "user" cannot access the admin page*/}
             </Route>
         </Routes>
       </div>

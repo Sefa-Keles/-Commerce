@@ -50,3 +50,9 @@ export const fetchLogout = async() => {
     })
     return data;
 }
+
+//Saving ordered products in backend
+export const postOrders = async(input) => {
+    const {data} = await axios.post(`${process.env.REACT_APP_BASE_ENDPOINT}/order`, input)
+    return data;
+}
