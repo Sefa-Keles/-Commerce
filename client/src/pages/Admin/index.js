@@ -6,6 +6,7 @@ import AdminHome from './Home/AdminHome';
 import Orders from './Orders/index';
 import Products from './Products';
 import ProductDetail from './ProductDetail'
+import NewProduct from './Products/newProduct';
 
 const Admin = () => {
   return (
@@ -29,6 +30,7 @@ const Admin = () => {
             <Route path={'orders'} element={<Orders/>}/>
             <Route path={'products'} element={<Products/>}/>
             <Route path={'products/:product_id'} element={<ProductDetail/>}/>
+            <Route path={'products/newProduct'} element={<NewProduct/>}/>
           </Routes>      
         </Box>
     </div>

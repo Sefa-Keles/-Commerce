@@ -72,3 +72,9 @@ export const updateProduct = async (product_id, inputs) => {
     const {data} = await axios.put(`${process.env.REACT_APP_BASE_ENDPOINT}/product/${product_id}`, inputs);
     return data;
 }
+
+//Adding a new product in the backend from the admin panel
+export const postNewProduct = async (inputs) => {
+    const {data} = await axios.post(`${process.env.REACT_APP_BASE_ENDPOINT}/product`, inputs);
+    return data;
+}
