@@ -66,7 +66,7 @@ const Products = () => {
     return <div>Error: {error.message}</div>
   }
 
-  console.log(data)
+  //console.log(data)
 
   return (
     <div>

@@ -31,7 +31,7 @@ function App() {
             <Route element={<PrivateRoutes/>}>
               <Route path='/profile' element={<Profile/>}/> 
               <Route path='/admin/*' element={<PrivateAdmin><Admin admin={true}/></PrivateAdmin>}/>{/*I wrapped it with PrivateAdmin so that a user who is a "user" cannot access the admin page*/}
-              {/*With admin/* we don't have to pull the URL using a hook. /* means adding a url linked to it.*/}
+              {/* With admin/* we don't have to pull the URL using a hook. /* means adding a url linked to it.*/}
             </Route>
         </Routes>
       </div>

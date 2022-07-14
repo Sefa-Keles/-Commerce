@@ -54,7 +54,7 @@ const Navbar = () => {
 
                 {
                 //Admin button in navbar if admin is logged in 
-                  user ?.role ==='admin' && (
+                  user?.role === 'admin' && (
                     <Link to='/admin'>
                       <Button colorScheme='pink' variant='ghost'>Admin</Button>
                     </Link>

@@ -5,6 +5,7 @@ import { Link, Routes, Route } from 'react-router-dom';
 import AdminHome from './Home/AdminHome';
 import Orders from './Orders/index';
 import Products from './Products';
+import ProductDetail from './ProductDetail'
 
 const Admin = () => {
   return (
@@ -27,6 +28,7 @@ const Admin = () => {
             <Route path='' element={<AdminHome/>}/>
             <Route path={'orders'} element={<Orders/>}/>
             <Route path={'products'} element={<Products/>}/>
+            <Route path={'products/:product_id'} element={<ProductDetail/>}/>
           </Routes>      
         </Box>
     </div>

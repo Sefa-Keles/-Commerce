@@ -65,3 +65,10 @@ export const deleteProduct = async (product_id) => {
     const {data} = await axios.delete(`${process.env.REACT_APP_BASE_ENDPOINT}/product/${product_id}`);
     return data;
 }
+
+//Send the data edited in the admin panel to the backend
+export const updateProduct = async (product_id, inputs) => {
+    //console.log(product_id, inputs)
+    const {data} = await axios.put(`${process.env.REACT_APP_BASE_ENDPOINT}/product/${product_id}`, inputs);
+    return data;
+}
