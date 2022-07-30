@@ -32,7 +32,7 @@ const Signin = () => {
     <div>
       <Flex align='center' width='full' justifyContent='center'>
         <Box textAlign='center'>
-          <Heading>Sign Up</Heading>
+          <Heading>Sign In</Heading>
           <Box my={5}>
             {
               formik.errors.general && (

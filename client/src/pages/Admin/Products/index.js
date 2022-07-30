@@ -75,7 +75,7 @@ const Products = () => {
         Products
         </Text>
         <Link to='/admin/products/newProduct'>
-          <Button colorScheme='blue'>New</Button>
+          <Button colorScheme='blue'>Add New</Button>
         </Link>
       </Flex>
       <Table dataSource={data} columns={columns} rowKey='_id'/>

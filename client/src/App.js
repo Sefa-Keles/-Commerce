@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import Signin from './pages/auth/Signin';
@@ -35,6 +36,7 @@ function App() {
             </Route>
         </Routes>
       </div>
+      <Footer/>
     </div>
   );
 }
